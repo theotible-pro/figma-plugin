@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 16px;
+        margin: 0;
+        background: #1e1e1e;
+        color: white;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #18a0fb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #0d8de3;
+      }
+
+      #message {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #aaa;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="rename-btn">Renommer les frames</button>
+    <div id="message">Sélectionne des frames dans Figma</div>
+
+    <script>
+      document.getElementById("rename-btn").onclick = function () {
+        document.getElementById("message").textContent = "En cours...";
+        parent.postMessage({ pluginMessage: { type: "rename" } }, "*");
+      };
+
+      window.onmessage = function (event) {
+        var msg = event.data.pluginMessage;
+        if (msg && msg.type === "done") {
+          document.getElementById("message").textContent =
+            msg.count + " frame(s) renommée(s) ✓";
+        }
+      };
+    </script>
+  </body>
+</html>
