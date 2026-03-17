@@ -20,7 +20,7 @@ en suivant la convention de nommage Tailwind CSS (gap-N).
 
 ## Idées futures
 - 🔲 Mode surveillance : renommage auto quand le gap change (plugin ouvert)
-- 🔲 Détection auto : scan des frames sans nom gap- sur sélection / page / tout le fichier
+- 🔲 Détection auto : scan des frames sans nom gap- sur sélection / page / tout le fichier et propose directement le renommage auto en fonction des gap détecté
 - 🔲 UI custom : design à venir (maquettes fournies par l'auteur)
 
 ## Stack
