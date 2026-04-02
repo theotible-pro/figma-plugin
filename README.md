@@ -1,28 +1,16 @@
-# Fast Renamer — Figma Plugin
+# React + Vite
 
-## C'est quoi ?
-Plugin Figma qui renomme automatiquement les frames avec auto-layout
-en suivant la convention de nommage Tailwind CSS (gap-N).
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Logique de renommage
-- Cible : uniquement les frames avec auto-layout (type === FRAME, layoutMode !== NONE)
-- Ignoré : composants, ellipses, frames sans auto-layout
-- Format : gap-N (N = px ÷ 4, max 1 décimale)
-- Exemples : 8px → gap-2 / 10px → gap-2.5 / 16px → gap-4
+Currently, two official plugins are available:
 
-## Fichiers
-- manifest.json : config du plugin
-- code.js : logique de renommage
-- ui.html : interface du plugin
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## État actuel
-- ✅ V1 fonctionnelle : renomme la sélection
+## React Compiler
 
-## Idées futures
-- 🔲 Mode surveillance : renommage auto quand le gap change (plugin ouvert)
-- 🔲 Détection auto : scan des frames sans nom gap- sur sélection / page / tout le fichier et propose directement le renommage auto en fonction des gap détecté
-- 🔲 UI custom : design à venir (maquettes fournies par l'auteur)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Stack
-- Figma Plugin API
-- HTML / CSS / JS vanilla
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
