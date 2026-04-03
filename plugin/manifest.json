@@ -3,6 +3,6 @@
   "id": "fast-renamer",
   "api": "1.0.0",
   "main": "code.js",
-  "ui": "ui.html",
+  "ui": "dist/src/ui/index.html",
   "editorType": ["figma"]
 }
