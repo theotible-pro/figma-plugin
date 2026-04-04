@@ -36,3 +36,29 @@ en suivant la convention de nommage Tailwind CSS (gap-N).
 - Design system : github.com/theotible-pro/design-system
 - GitHub : github.com/theotible-pro/figma-plugin
 
+## Architecture UI
+
+### Stack
+- React + Vite + vite-plugin-singlefile (tout inliné dans un seul HTML pour Figma)
+- Tailwind CSS (scan les composants du design system via @source)
+- @theotible-pro/design-system (GitHub Packages)
+
+### Pourquoi vite-plugin-singlefile ?
+Figma ne peut pas charger des fichiers JS/CSS externes depuis un plugin.
+Tout doit être inliné dans un seul fichier HTML.
+
+### Pourquoi Tailwind dans figma-plugin ?
+Le design system utilise des classes Tailwind mais ne génère pas de CSS.
+Tailwind dans figma-plugin scanne les composants du design system via :
+`@source "../../node_modules/@theotible-pro/design-system/dist"`
+
+### Fichiers UI
+- `src/ui/index.html` — point d'entrée
+- `src/ui/main.jsx` — bootstrap React
+- `src/ui/App.jsx` — composant principal
+- `src/ui/index.css` — Tailwind + scan design system
+- `plugin/dist/src/ui/index.html` — fichier final buildé pour Figma
+
+### Commandes
+- `npm run build` — génère le fichier UI pour Figma
+- Après chaque modification UI → toujours rebuilder avant de tester dans Figma
