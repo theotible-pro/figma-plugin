@@ -1,4 +1,5 @@
 import { Button } from '@theotible-pro/design-system'
+import { PencilLine } from 'lucide-react'
 
 export default function App() {
   function handleRename() {
@@ -6,8 +7,13 @@ export default function App() {
   }
 
   return (
-    <div style={{ padding: 16 }}>
-      <Button onClick={handleRename}>
+    <div style={{ padding: 16, backgroundColor: '#1e1e1e'}}>
+      <Button
+        onClick={handleRename}
+        iconLeft={<PencilLine size={16} />}
+        size="lg"
+        variant="default"
+      >
         Renommer les frames
       </Button>
     </div>
